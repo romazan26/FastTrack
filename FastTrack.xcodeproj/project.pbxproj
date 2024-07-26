@@ -7,15 +7,40 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3061E9802C5178B90044B576 /* Registrationview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3061E97F2C5178B90044B576 /* Registrationview.swift */; };
+		3061E9832C5179190044B576 /* CustomTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3061E9822C5179190044B576 /* CustomTextFieldView.swift */; };
+		3061E9862C517A020044B576 /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3061E9852C517A020044B576 /* RegistrationViewModel.swift */; };
+		3061E9882C517AE80044B576 /* CustomButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3061E9872C517AE80044B576 /* CustomButtonView.swift */; };
+		3061E98C2C517BC90044B576 /* FastTrack.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3061E98A2C517BC90044B576 /* FastTrack.xcdatamodeld */; };
+		3061E98E2C517BE20044B576 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3061E98D2C517BE20044B576 /* CoreDataManager.swift */; };
+		3061E99B2C53CBF50044B576 /* ProgressCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3061E99A2C53CBF50044B576 /* ProgressCircleView.swift */; };
+		3061E9A12C53E97D0044B576 /* PlacesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3061E9A02C53E97D0044B576 /* PlacesView.swift */; };
+		3061E9A32C53F4DB0044B576 /* toolbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3061E9A22C53F4DB0044B576 /* toolbarView.swift */; };
+		3061E9A52C540CDF0044B576 /* OrangeButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3061E9A42C540CDF0044B576 /* OrangeButtonView.swift */; };
+		3061E9A72C540E8E0044B576 /* PlaceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3061E9A62C540E8E0044B576 /* PlaceViewModel.swift */; };
+		3061E9A92C5411690044B576 /* NewPlaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3061E9A82C5411690044B576 /* NewPlaceView.swift */; };
 		3093874C2C50F3FD00CB0885 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3093874B2C50F3FD00CB0885 /* AppDelegate.swift */; };
 		3093874E2C50F3FD00CB0885 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3093874D2C50F3FD00CB0885 /* SceneDelegate.swift */; };
 		309387502C50F3FD00CB0885 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3093874F2C50F3FD00CB0885 /* ViewController.swift */; };
 		309387532C50F3FD00CB0885 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 309387522C50F3FD00CB0885 /* Base */; };
 		309387552C50F40100CB0885 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 309387542C50F40100CB0885 /* Assets.xcassets */; };
 		309387582C50F40100CB0885 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 309387572C50F40100CB0885 /* Base */; };
+		309387612C50F43A00CB0885 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 309387602C50F43A00CB0885 /* LoadingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3061E97F2C5178B90044B576 /* Registrationview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Registrationview.swift; sourceTree = "<group>"; };
+		3061E9822C5179190044B576 /* CustomTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextFieldView.swift; sourceTree = "<group>"; };
+		3061E9852C517A020044B576 /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
+		3061E9872C517AE80044B576 /* CustomButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtonView.swift; sourceTree = "<group>"; };
+		3061E98B2C517BC90044B576 /* FastTrack.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FastTrack.xcdatamodel; sourceTree = "<group>"; };
+		3061E98D2C517BE20044B576 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		3061E99A2C53CBF50044B576 /* ProgressCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressCircleView.swift; sourceTree = "<group>"; };
+		3061E9A02C53E97D0044B576 /* PlacesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesView.swift; sourceTree = "<group>"; };
+		3061E9A22C53F4DB0044B576 /* toolbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = toolbarView.swift; sourceTree = "<group>"; };
+		3061E9A42C540CDF0044B576 /* OrangeButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrangeButtonView.swift; sourceTree = "<group>"; };
+		3061E9A62C540E8E0044B576 /* PlaceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceViewModel.swift; sourceTree = "<group>"; };
+		3061E9A82C5411690044B576 /* NewPlaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPlaceView.swift; sourceTree = "<group>"; };
 		309387482C50F3FD00CB0885 /* FastTrack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FastTrack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3093874B2C50F3FD00CB0885 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3093874D2C50F3FD00CB0885 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +49,7 @@
 		309387542C50F40100CB0885 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		309387572C50F40100CB0885 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		309387592C50F40100CB0885 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		309387602C50F43A00CB0885 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +63,54 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3061E97E2C5178990044B576 /* Loading */ = {
+			isa = PBXGroup;
+			children = (
+				309387602C50F43A00CB0885 /* LoadingView.swift */,
+				3061E97F2C5178B90044B576 /* Registrationview.swift */,
+			);
+			path = Loading;
+			sourceTree = "<group>";
+		};
+		3061E9812C5178FD0044B576 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				3061E9822C5179190044B576 /* CustomTextFieldView.swift */,
+				3061E9872C517AE80044B576 /* CustomButtonView.swift */,
+				3061E99A2C53CBF50044B576 /* ProgressCircleView.swift */,
+				3061E9A22C53F4DB0044B576 /* toolbarView.swift */,
+				3061E9A42C540CDF0044B576 /* OrangeButtonView.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		3061E9842C5179E70044B576 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				3061E9852C517A020044B576 /* RegistrationViewModel.swift */,
+				3061E9A62C540E8E0044B576 /* PlaceViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		3061E9892C517B9F0044B576 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				3061E98A2C517BC90044B576 /* FastTrack.xcdatamodeld */,
+				3061E98D2C517BE20044B576 /* CoreDataManager.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		3061E99D2C53E9100044B576 /* PlaceVew */ = {
+			isa = PBXGroup;
+			children = (
+				3061E9A02C53E97D0044B576 /* PlacesView.swift */,
+				3061E9A82C5411690044B576 /* NewPlaceView.swift */,
+			);
+			path = PlaceVew;
+			sourceTree = "<group>";
+		};
 		3093873F2C50F3FD00CB0885 = {
 			isa = PBXGroup;
 			children = (
@@ -56,6 +130,10 @@
 		3093874A2C50F3FD00CB0885 /* FastTrack */ = {
 			isa = PBXGroup;
 			children = (
+				3061E9892C517B9F0044B576 /* CoreData */,
+				3061E9842C5179E70044B576 /* ViewModels */,
+				3061E9812C5178FD0044B576 /* Helpers */,
+				3093875F2C50F42400CB0885 /* View */,
 				3093874B2C50F3FD00CB0885 /* AppDelegate.swift */,
 				3093874D2C50F3FD00CB0885 /* SceneDelegate.swift */,
 				3093874F2C50F3FD00CB0885 /* ViewController.swift */,
@@ -65,6 +143,15 @@
 				309387592C50F40100CB0885 /* Info.plist */,
 			);
 			path = FastTrack;
+			sourceTree = "<group>";
+		};
+		3093875F2C50F42400CB0885 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3061E99D2C53E9100044B576 /* PlaceVew */,
+				3061E97E2C5178990044B576 /* Loading */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,9 +225,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3061E99B2C53CBF50044B576 /* ProgressCircleView.swift in Sources */,
+				3061E9A72C540E8E0044B576 /* PlaceViewModel.swift in Sources */,
 				309387502C50F3FD00CB0885 /* ViewController.swift in Sources */,
+				3061E9A52C540CDF0044B576 /* OrangeButtonView.swift in Sources */,
 				3093874C2C50F3FD00CB0885 /* AppDelegate.swift in Sources */,
 				3093874E2C50F3FD00CB0885 /* SceneDelegate.swift in Sources */,
+				3061E9882C517AE80044B576 /* CustomButtonView.swift in Sources */,
+				3061E9A92C5411690044B576 /* NewPlaceView.swift in Sources */,
+				3061E9862C517A020044B576 /* RegistrationViewModel.swift in Sources */,
+				3061E9A32C53F4DB0044B576 /* toolbarView.swift in Sources */,
+				3061E9A12C53E97D0044B576 /* PlacesView.swift in Sources */,
+				309387612C50F43A00CB0885 /* LoadingView.swift in Sources */,
+				3061E98C2C517BC90044B576 /* FastTrack.xcdatamodeld in Sources */,
+				3061E9802C5178B90044B576 /* Registrationview.swift in Sources */,
+				3061E98E2C517BE20044B576 /* CoreDataManager.swift in Sources */,
+				3061E9832C5179190044B576 /* CustomTextFieldView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,8 +397,9 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -306,9 +407,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = home.FastTrack;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -324,8 +429,9 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -333,9 +439,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = home.FastTrack;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -361,6 +471,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		3061E98A2C517BC90044B576 /* FastTrack.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				3061E98B2C517BC90044B576 /* FastTrack.xcdatamodel */,
+			);
+			currentVersion = 3061E98B2C517BC90044B576 /* FastTrack.xcdatamodel */;
+			name = FastTrack.xcdatamodeld;
+			path = /Users/roman/Downloads/XcodeProgramm/FastTrack/FastTrack/CoreData/FastTrack.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 309387402C50F3FD00CB0885 /* Project object */;
 }
