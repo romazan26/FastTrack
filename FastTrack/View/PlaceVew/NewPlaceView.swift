@@ -36,11 +36,19 @@ struct NewPlaceView: View {
                 }
                 
                 //MARK: - Text Field group
-                CustomTextFieldView(placeholder: "Place title", text: $vm.simplePlaceTitle)
-                    .padding(.top)
-                    .focused($keyboardIsFocus)
-                CustomTextFieldView(placeholder: "Address", text: $vm.simpleAdress)
-                    .focused($keyboardIsFocus)
+                ScrollView{
+                    //MARK: - Place title TF
+                    CustomTextFieldView(placeholder: "Place title", text: $vm.simplePlaceTitle)
+                        .padding(.top)
+                        .focused($keyboardIsFocus)
+                    
+                    //MARK: - Address TF
+                    CustomTextFieldView(placeholder: "Address", text: $vm.simpleAdress)
+                        .focused($keyboardIsFocus)
+                    
+                    //MARK: - Cars List TF
+                    NewCarsCellView(simpleImage: $vm.simpleCarImage, simpleNameCar: $vm.simpleCarTitle)
+                }
                 Spacer()
                 
                 //MARK: - Create button
@@ -50,8 +58,8 @@ struct NewPlaceView: View {
                 }, label: {
                     OrangeButtonView(text: "Create")
                 })
-                
-            }.padding()
+            }
+            .padding()
         }
         .onTapGesture {
             keyboardIsFocus = false

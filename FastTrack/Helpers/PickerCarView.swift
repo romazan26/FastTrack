@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct PickerCarView: View {
-    var maxWidth: CGFloat = 180
+    var maxWidth: CGFloat = 150
     var cornerRadius: CGFloat = 15
     @Binding var selection: ImageResource
     @State var image: ImageResource
@@ -23,6 +23,7 @@ struct PickerCarView: View {
                     Image(image)
                         .resizable()
                         .frame(width: 72, height: 17)
+                       
                     Spacer()
                     
                     Image(systemName: "chevron.down")
@@ -53,11 +54,11 @@ struct PickerCarView: View {
     func Optionsview() -> some View {
         VStack(spacing: 10){
             ForEach(Cars.allCases) {  car in
-                HStack(spacing: 0) {
+                HStack(spacing: 25) {
                     Image(car.image)
                         .resizable()
                         .frame(width: 72, height: 17)
-                    Spacer()
+                   // Spacer()
                     Image(systemName: "checkmark")
                         .foregroundStyle(.white)
                         .opacity(selection == car.image ? 1: 0)
@@ -77,7 +78,7 @@ struct PickerCarView: View {
            
             
         }
-        .padding(.horizontal, 15)
+       // .padding(.horizontal, 15)
         
     }
 }

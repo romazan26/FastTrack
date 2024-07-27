@@ -16,12 +16,13 @@ final class PlaceViewModel: ObservableObject{
     @Published var isPresentNewPlace = false
     
     @Published var places: [Place] = []
+    @Published var cars: [Car] = []
     
     @Published var simplePlaceTitle = ""
     @Published var simpleAdress = ""
     
     @Published var simpleCarTitle = ""
-    @Published var simpleCarImage = Image(.car1)
+    @Published var simpleCarImage = ImageResource.car1
     
     init(){
         getPlace()
