@@ -7,6 +7,8 @@
 
 import Foundation
 import CoreData
+import SwiftUI
+
 
 final class PlaceViewModel: ObservableObject{
     let manager = CoreDataManager.instance
@@ -17,6 +19,13 @@ final class PlaceViewModel: ObservableObject{
     
     @Published var simplePlaceTitle = ""
     @Published var simpleAdress = ""
+    
+    @Published var simpleCarTitle = ""
+    @Published var simpleCarImage = Image(.car1)
+    
+    init(){
+        getPlace()
+    }
     
     //MARK: - Add Place
     func addPlace(){
