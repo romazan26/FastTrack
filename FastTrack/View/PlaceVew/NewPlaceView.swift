@@ -47,7 +47,25 @@ struct NewPlaceView: View {
                         .focused($keyboardIsFocus)
                     
                     //MARK: - Cars List TF
-                    NewCarsCellView(simpleImage: $vm.simpleCarImage, simpleNameCar: $vm.simpleCarTitle)
+                    ForEach(0..<vm.countCars, id: \.self){i in
+                        NewCarsCellView(simpleImage: $vm.simpleCarImage, simpleNameCar: $vm.simpleCarTitleArray[i])
+                        
+                    }
+                    
+                    Button(action: {
+                        vm.addNewCarCell()
+                    }
+                    , label: {
+                        ZStack {
+                            Color.clear
+                            Text("+").foregroundStyle(.white)
+                        }
+                    })
+                    .frame(width: 356, height: 63)
+                    .overlay {
+                        RoundedRectangle(cornerRadius: 16)
+                            .stroke(.white.opacity(0.3), lineWidth: 2)
+                    }
                 }
                 Spacer()
                 

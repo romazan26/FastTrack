@@ -23,9 +23,21 @@ final class PlaceViewModel: ObservableObject{
     
     @Published var simpleCarTitle = ""
     @Published var simpleCarImage = ImageResource.car1
+    @Published var simpleCarTitleArray: [String] = []
+    @Published var simpleCarImageArray: [ImageResource] = []
+    @Published var countCars = 0
     
     init(){
         getPlace()
+        getCars()
+    }
+    
+    //MARK: - addNewCarCell
+    func addNewCarCell(){
+            simpleCarTitleArray.append(simpleCarTitle)
+            simpleCarImageArray.append(simpleCarImage)
+            countCars += 1
+        
     }
     
     //MARK: - Add Place
@@ -49,10 +61,25 @@ final class PlaceViewModel: ObservableObject{
         }
     }
     
+    func getCars(){
+        let request = NSFetchRequest<Car>(entityName: "Car")
+        
+        do{
+            cars = try manager.context.fetch(request)
+        }catch let error{
+            print("Error fetching: \(error.localizedDescription)")
+        }
+    }
+    
     //MARK: - Clear property
     func clear(){
         simplePlaceTitle = ""
         simpleAdress = ""
+        simpleCarTitle = ""
+        simpleCarImage = ImageResource.car1
+        simpleCarTitleArray.removeAll()
+        simpleCarImageArray.removeAll()
+        countCars = 0
     }
     
     //MARK: - Save data
