@@ -8,17 +8,18 @@
 import SwiftUI
 
 struct CarCellView: View {
+    let car: Car
     var body: some View {
         ZStack {
             Color.secondColorApp
             HStack {
-                Image(.car1)
+                Image(uiImage: car.carImage ?? .car1 )
                     .resizable()
                     .frame(width: 72, height: 17)
                 Rectangle()
                     .frame(width: 1, height: 32)
                     .foregroundStyle(.gray)
-                Text("Even PRO V4")
+                Text(car.carTitle ?? "")
                     .foregroundStyle(.white)
                     .font(.system(size: 17, weight: .heavy))
                 
@@ -36,5 +37,5 @@ struct CarCellView: View {
 }
 
 #Preview {
-    CarCellView()
+    CarCellView(car: Car())
 }

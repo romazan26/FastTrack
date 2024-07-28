@@ -9,6 +9,7 @@ import SwiftUI
 
 struct PlaceInfoView: View {
     @Environment(\.dismiss) var dismiss
+    @StateObject var vm: PlaceViewModel
     let place: Place
     var body: some View {
         ZStack(alignment: Alignment(horizontal: .center, vertical: .top)) {
@@ -44,7 +45,7 @@ struct PlaceInfoView: View {
                         .background(Color.secondColorApp.cornerRadius(91))
                 }
                 
-               toolbarView()
+                toolbarView(vm: vm)
                     .padding(.top, 65)
                     .shadow(color: /*@START_MENU_TOKEN@*/.black/*@END_MENU_TOKEN@*/, radius: 20)
                 
@@ -67,9 +68,14 @@ struct PlaceInfoView: View {
                 }.padding(.top)
                 
                 //MARK: - List of car
-                ScrollView {
-                    CarCellView()
+                if let cars = place.car?.allObjects as? [Car] {
+                    ScrollView {
+                        ForEach(cars) { car in
+                            CarCellView(car: car)
+                        }
+                    }
                 }
+                
                 
                 Spacer()
                 
@@ -88,5 +94,5 @@ struct PlaceInfoView: View {
 }
 
 #Preview {
-    PlaceInfoView(place: Place())
+    PlaceInfoView(vm: PlaceViewModel(), place: Place())
 }

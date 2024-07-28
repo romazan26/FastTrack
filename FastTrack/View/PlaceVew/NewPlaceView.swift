@@ -48,10 +48,11 @@ struct NewPlaceView: View {
                     
                     //MARK: - Cars List TF
                     ForEach(0..<vm.countCars, id: \.self){i in
-                        NewCarsCellView(simpleImage: $vm.simpleCarImage, simpleNameCar: $vm.simpleCarTitleArray[i])
+                        NewCarsCellView(simpleImage: $vm.simpleCarImageArray[i], simpleNameCar: $vm.simpleCars[i])
                         
                     }
                     
+                    //MARK: - one more car tF Button
                     Button(action: {
                         vm.addNewCarCell()
                     }
@@ -67,6 +68,7 @@ struct NewPlaceView: View {
                             .stroke(.white.opacity(0.3), lineWidth: 2)
                     }
                 }
+                
                 Spacer()
                 
                 //MARK: - Create button

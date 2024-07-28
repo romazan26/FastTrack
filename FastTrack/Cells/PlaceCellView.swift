@@ -66,16 +66,19 @@ struct PlaceCellView: View {
                 Spacer()
                 HStack{
                     //MARK: - Cars
-                    HStack{
-                        Image(.car1)
-                            .resizable()
-                            .frame(width: 54, height: 13)
-                        Text("13 cars")
-                            .foregroundStyle(.white)
-                            .font(.system(size: 16, weight: .heavy))
+                    if let cars = place.car?.allObjects as? [Car] {
+                        HStack{
+                            Image(.car1)
+                                .resizable()
+                                .frame(width: 54, height: 13)
+                            
+                            Text("\(cars.count) cars")
+                                .foregroundStyle(.white)
+                                .font(.system(size: 16, weight: .heavy))
+                        }
+                        .frame(width: 139, height: 57)
+                        .background(Color.grayApp.cornerRadius(22))
                     }
-                    .frame(width: 139, height: 57)
-                    .background(Color.grayApp.cornerRadius(22))
                     
                     Spacer()
                     

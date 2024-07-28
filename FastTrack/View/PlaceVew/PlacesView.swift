@@ -30,7 +30,7 @@ struct PlacesView: View {
                     }
                     .padding(.vertical)
                     //MARK: - ToolBar
-                    toolbarView()
+                    toolbarView(vm: vm)
                     
                     Spacer()
                     
@@ -41,7 +41,7 @@ struct PlacesView: View {
                         ScrollView {
                             ForEach(vm.places) { place in
                                 NavigationLink {
-                                    PlaceInfoView(place: place)
+                                    PlaceInfoView(vm: vm, place: place)
                                 } label: {
                                     PlaceCellView(place: place)
                                 }

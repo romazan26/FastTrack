@@ -21,6 +21,7 @@ public class Car: NSManagedObject {
 
     @NSManaged public var carImage: UIImage?
     @NSManaged public var carTitle: String?
+    @NSManaged public var place: Place?
 
 }
 

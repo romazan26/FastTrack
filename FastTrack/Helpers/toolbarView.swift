@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct toolbarView: View {
+    @StateObject var vm: PlaceViewModel
     var body: some View {
         ZStack {
             Color.secondColorApp
@@ -42,7 +43,7 @@ struct toolbarView: View {
                 
                 //MARK: - Total places
                 VStack {
-                    Text("0")
+                    Text("\(vm.places.count)")
                         .foregroundStyle(.white)
                     .font(.system(size: 26,weight: .heavy))
                     Text("Total places")
@@ -57,5 +58,5 @@ struct toolbarView: View {
 }
 
 #Preview {
-    toolbarView()
+    toolbarView(vm: PlaceViewModel())
 }

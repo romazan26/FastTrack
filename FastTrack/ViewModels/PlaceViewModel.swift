@@ -23,7 +23,7 @@ final class PlaceViewModel: ObservableObject{
     
     @Published var simpleCarTitle = ""
     @Published var simpleCarImage = ImageResource.car1
-    @Published var simpleCarTitleArray: [String] = []
+    @Published var simpleCars: [String] = []
     @Published var simpleCarImageArray: [ImageResource] = []
     @Published var countCars = 0
     
@@ -34,7 +34,7 @@ final class PlaceViewModel: ObservableObject{
     
     //MARK: - addNewCarCell
     func addNewCarCell(){
-            simpleCarTitleArray.append(simpleCarTitle)
+            simpleCars.append(simpleCarTitle)
             simpleCarImageArray.append(simpleCarImage)
             countCars += 1
         
@@ -46,8 +46,24 @@ final class PlaceViewModel: ObservableObject{
         newPlace.placetitle = simplePlaceTitle
         newPlace.adress = simpleAdress
         
+        var index = 0
+        for simpleCar in simpleCars {
+            if !simpleCar.isEmpty {
+                addCar(carTitle: simpleCar, carImage: simpleCarImageArray[index], place: newPlace)
+            }
+            index += 1
+        }
+        
         save()
         clear()
+    }
+    
+    //MARK: - Add one car
+    func addCar(carTitle: String, carImage: ImageResource, place: Place){
+        let newCar = Car(context: manager.context)
+        newCar.carTitle = carTitle
+        newCar.carImage = UIImage(resource: carImage)
+        newCar.place = place
     }
     
     //MARK: - Get data
@@ -77,7 +93,7 @@ final class PlaceViewModel: ObservableObject{
         simpleAdress = ""
         simpleCarTitle = ""
         simpleCarImage = ImageResource.car1
-        simpleCarTitleArray.removeAll()
+        simpleCars.removeAll()
         simpleCarImageArray.removeAll()
         countCars = 0
     }
