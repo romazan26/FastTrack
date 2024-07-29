@@ -60,6 +60,7 @@ struct PlacesView: View {
                     })
                 }.padding()
             }
+            
             .sheet(isPresented: $vm.isPresentNewPlace, content: {
                 NewPlaceView(vm: vm)
         })

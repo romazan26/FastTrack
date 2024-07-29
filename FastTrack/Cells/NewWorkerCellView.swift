@@ -30,7 +30,7 @@ struct NewWorkerCellView: View {
             HStack(spacing: 20) {
                 
                 //MARK: - Photo worker
-                if photoWorker == nil{
+                if photoWorker == .test{
                     Button {
                         isPresented.toggle()
                     } label: {

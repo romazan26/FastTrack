@@ -80,15 +80,24 @@ struct PlaceInfoView: View {
                 Spacer()
                 
                 //MARK: - Workers view
-                WorkersCellView()
-                    .padding(.vertical)
+                Button(action: {vm.isPresentEditePlace.toggle()}, label: {
+                    WorkersCellView(place: place)
+                        .padding(.vertical)
+                })
+                
                 
                 //MARK: - Edit information button
-                Button(action: {}, label: {
+                Button(action: {
+                    vm.addAllWorkers(place: place)
+                    
+                }, label: {
                     OrangeButtonView(text: "Edit information")
                 })
             }.padding()
         }
+        .sheet(isPresented: $vm.isPresentEditePlace, content: {
+            AddWorkersView(place: place, vm: vm)
+        })
         .navigationBarBackButtonHidden()
     }
 }

@@ -9,9 +9,11 @@ import SwiftUI
 
 struct CustomTextFieldView: View {
     var placeholder = ""
+    var alignment: Alignment = .leading
+    var textAlignment: TextAlignment = .leading
     @Binding var text: String
     var body: some View {
-        ZStack(alignment: .leading) {
+        ZStack(alignment: alignment) {
             Color.secondColorApp
             if text.isEmpty {
                 Text(placeholder)
@@ -22,6 +24,7 @@ struct CustomTextFieldView: View {
             TextField("", text: $text)
                 .padding()
                 .foregroundStyle(.white)
+                .multilineTextAlignment(textAlignment)
         }
         .cornerRadius(25)
         .frame(maxWidth: .infinity)

@@ -14,12 +14,21 @@ final class PlaceViewModel: ObservableObject{
     let manager = CoreDataManager.instance
     
     @Published var isPresentNewPlace = false
+    @Published var isPresentEditePlace = false
     
     @Published var places: [Place] = []
     @Published var cars: [Car] = []
+    @Published var workers: [Worker] = []
+    
+    @Published var simpleWorkerName = ""
+    @Published var simpleWorkerImage: UIImage = .test
+    @Published var simpleWorkers: [String] = []
+    @Published var simpleWorkersImages: [UIImage] = []
+    @Published var countWorkers = 0
     
     @Published var simplePlaceTitle = ""
     @Published var simpleAdress = ""
+    @Published var simplePlaceSolary = ""
     
     @Published var simpleCarTitle = ""
     @Published var simpleCarImage = ImageResource.car1
@@ -30,6 +39,14 @@ final class PlaceViewModel: ObservableObject{
     init(){
         getPlace()
         getCars()
+        getWorkers()
+    }
+    
+    //MARK: - addNewWorkerCell
+    func addNewWorkerCell(){
+        simpleWorkers.append(simpleWorkerName)
+        simpleWorkersImages.append(simpleWorkerImage)
+        countWorkers += 1
     }
     
     //MARK: - addNewCarCell
@@ -37,7 +54,6 @@ final class PlaceViewModel: ObservableObject{
             simpleCars.append(simpleCarTitle)
             simpleCarImageArray.append(simpleCarImage)
             countCars += 1
-        
     }
     
     //MARK: - Add Place
@@ -58,12 +74,33 @@ final class PlaceViewModel: ObservableObject{
         clear()
     }
     
+    //MARK: - Add all worker
+    func addAllWorkers(place: Place){
+        var index = 0
+        for simpleWorker in simpleWorkers {
+            if !simpleWorker.isEmpty{
+                addWorker(workerName: simpleWorker, workerImage: simpleWorkersImages[index], place: place)
+            }
+            index += 1
+        }
+        save()
+        clear()
+    }
+    
     //MARK: - Add one car
     func addCar(carTitle: String, carImage: ImageResource, place: Place){
         let newCar = Car(context: manager.context)
         newCar.carTitle = carTitle
         newCar.carImage = UIImage(resource: carImage)
         newCar.place = place
+    }
+    
+    //MARK: - Add one worker
+    func addWorker(workerName: String, workerImage: UIImage, place: Place){
+        let newWorker = Worker(context: manager.context)
+        newWorker.nameWorker = workerName
+        newWorker.photoWorker = workerImage
+        newWorker.place = place
     }
     
     //MARK: - Get data
@@ -87,6 +124,16 @@ final class PlaceViewModel: ObservableObject{
         }
     }
     
+    func getWorkers(){
+        let request = NSFetchRequest<Worker>(entityName: "Worker")
+        
+        do{
+            workers = try manager.context.fetch(request)
+        }catch let error{
+            print("Error fetching: \(error.localizedDescription)")
+        }
+    }
+    
     //MARK: - Clear property
     func clear(){
         simplePlaceTitle = ""
@@ -96,6 +143,13 @@ final class PlaceViewModel: ObservableObject{
         simpleCars.removeAll()
         simpleCarImageArray.removeAll()
         countCars = 0
+        simpleWorkerName = ""
+        simpleWorkerImage = .test
+        simpleWorkers.removeAll()
+        simpleWorkersImages.removeAll()
+        countWorkers = 0
+        
+        
     }
     
     //MARK: - Save data

@@ -32,6 +32,8 @@
 		3061E9C12C5771360044B576 /* AddWorkersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3061E9C02C5771360044B576 /* AddWorkersView.swift */; };
 		3061E9C32C57C8310044B576 /* NewWorkerCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3061E9C22C57C8310044B576 /* NewWorkerCellView.swift */; };
 		3061E9C52C57D3330044B576 /* PhotoPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3061E9C42C57D3330044B576 /* PhotoPicker.swift */; };
+		3061E9C72C57E1F60044B576 /* Worker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3061E9C62C57E1F60044B576 /* Worker.swift */; };
+		3061E9C92C57EA380044B576 /* WorkerCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3061E9C82C57EA380044B576 /* WorkerCellView.swift */; };
 		3093874C2C50F3FD00CB0885 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3093874B2C50F3FD00CB0885 /* AppDelegate.swift */; };
 		3093874E2C50F3FD00CB0885 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3093874D2C50F3FD00CB0885 /* SceneDelegate.swift */; };
 		309387502C50F3FD00CB0885 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3093874F2C50F3FD00CB0885 /* ViewController.swift */; };
@@ -67,6 +69,8 @@
 		3061E9C02C5771360044B576 /* AddWorkersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWorkersView.swift; sourceTree = "<group>"; };
 		3061E9C22C57C8310044B576 /* NewWorkerCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewWorkerCellView.swift; sourceTree = "<group>"; };
 		3061E9C42C57D3330044B576 /* PhotoPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoPicker.swift; sourceTree = "<group>"; };
+		3061E9C62C57E1F60044B576 /* Worker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Worker.swift; sourceTree = "<group>"; };
+		3061E9C82C57EA380044B576 /* WorkerCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkerCellView.swift; sourceTree = "<group>"; };
 		309387482C50F3FD00CB0885 /* FastTrack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FastTrack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3093874B2C50F3FD00CB0885 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3093874D2C50F3FD00CB0885 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -130,6 +134,7 @@
 				3061E98D2C517BE20044B576 /* CoreDataManager.swift */,
 				3061E9BB2C5582C90044B576 /* UIImageTransformer.swift */,
 				3061E9BD2C5582EC0044B576 /* Car.swift */,
+				3061E9C62C57E1F60044B576 /* Worker.swift */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -151,6 +156,7 @@
 				3061E9B12C552EBA0044B576 /* CarCellView.swift */,
 				3061E9B92C553CD60044B576 /* NewCarsCellView.swift */,
 				3061E9C22C57C8310044B576 /* NewWorkerCellView.swift */,
+				3061E9C82C57EA380044B576 /* WorkerCellView.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -295,6 +301,7 @@
 				3061E9862C517A020044B576 /* RegistrationViewModel.swift in Sources */,
 				3061E9B02C5529840044B576 /* PlaceInfoView.swift in Sources */,
 				3061E9A32C53F4DB0044B576 /* toolbarView.swift in Sources */,
+				3061E9C92C57EA380044B576 /* WorkerCellView.swift in Sources */,
 				3061E9A12C53E97D0044B576 /* PlacesView.swift in Sources */,
 				309387612C50F43A00CB0885 /* LoadingView.swift in Sources */,
 				3061E9B82C55399E0044B576 /* PickerCarView.swift in Sources */,
@@ -305,6 +312,7 @@
 				3061E9C12C5771360044B576 /* AddWorkersView.swift in Sources */,
 				3061E9802C5178B90044B576 /* Registrationview.swift in Sources */,
 				3061E98E2C517BE20044B576 /* CoreDataManager.swift in Sources */,
+				3061E9C72C57E1F60044B576 /* Worker.swift in Sources */,
 				3061E9C52C57D3330044B576 /* PhotoPicker.swift in Sources */,
 				3061E9AB2C54157E0044B576 /* TextFieldCustomView.swift in Sources */,
 				3061E9BA2C553CD60044B576 /* NewCarsCellView.swift in Sources */,
