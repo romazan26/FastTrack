@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct WorkersView: View {
+struct WorkersCellView: View {
     var body: some View {
         ZStack {
             Color.secondColorApp
@@ -53,5 +53,5 @@ struct WorkersView: View {
 }
 
 #Preview {
-    WorkersView()
+    WorkersCellView()
 }

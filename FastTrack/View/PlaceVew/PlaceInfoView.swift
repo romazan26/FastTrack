@@ -80,7 +80,7 @@ struct PlaceInfoView: View {
                 Spacer()
                 
                 //MARK: - Workers view
-                WorkersView()
+                WorkersCellView()
                     .padding(.vertical)
                 
                 //MARK: - Edit information button

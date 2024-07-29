@@ -23,12 +23,15 @@
 		3061E9AE2C5420C60044B576 /* PlaceCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3061E9AD2C5420C60044B576 /* PlaceCellView.swift */; };
 		3061E9B02C5529840044B576 /* PlaceInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3061E9AF2C5529840044B576 /* PlaceInfoView.swift */; };
 		3061E9B22C552EBA0044B576 /* CarCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3061E9B12C552EBA0044B576 /* CarCellView.swift */; };
-		3061E9B42C55303D0044B576 /* WorkersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3061E9B32C55303D0044B576 /* WorkersView.swift */; };
+		3061E9B42C55303D0044B576 /* WorkersCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3061E9B32C55303D0044B576 /* WorkersCellView.swift */; };
 		3061E9B62C5538A90044B576 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3061E9B52C5538A90044B576 /* Enums.swift */; };
 		3061E9B82C55399E0044B576 /* PickerCarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3061E9B72C55399E0044B576 /* PickerCarView.swift */; };
 		3061E9BA2C553CD60044B576 /* NewCarsCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3061E9B92C553CD60044B576 /* NewCarsCellView.swift */; };
 		3061E9BC2C5582C90044B576 /* UIImageTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3061E9BB2C5582C90044B576 /* UIImageTransformer.swift */; };
 		3061E9BE2C5582EC0044B576 /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3061E9BD2C5582EC0044B576 /* Car.swift */; };
+		3061E9C12C5771360044B576 /* AddWorkersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3061E9C02C5771360044B576 /* AddWorkersView.swift */; };
+		3061E9C32C57C8310044B576 /* NewWorkerCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3061E9C22C57C8310044B576 /* NewWorkerCellView.swift */; };
+		3061E9C52C57D3330044B576 /* PhotoPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3061E9C42C57D3330044B576 /* PhotoPicker.swift */; };
 		3093874C2C50F3FD00CB0885 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3093874B2C50F3FD00CB0885 /* AppDelegate.swift */; };
 		3093874E2C50F3FD00CB0885 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3093874D2C50F3FD00CB0885 /* SceneDelegate.swift */; };
 		309387502C50F3FD00CB0885 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3093874F2C50F3FD00CB0885 /* ViewController.swift */; };
@@ -55,12 +58,15 @@
 		3061E9AD2C5420C60044B576 /* PlaceCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceCellView.swift; sourceTree = "<group>"; };
 		3061E9AF2C5529840044B576 /* PlaceInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceInfoView.swift; sourceTree = "<group>"; };
 		3061E9B12C552EBA0044B576 /* CarCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarCellView.swift; sourceTree = "<group>"; };
-		3061E9B32C55303D0044B576 /* WorkersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkersView.swift; sourceTree = "<group>"; };
+		3061E9B32C55303D0044B576 /* WorkersCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkersCellView.swift; sourceTree = "<group>"; };
 		3061E9B52C5538A90044B576 /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
 		3061E9B72C55399E0044B576 /* PickerCarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerCarView.swift; sourceTree = "<group>"; };
 		3061E9B92C553CD60044B576 /* NewCarsCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCarsCellView.swift; sourceTree = "<group>"; };
 		3061E9BB2C5582C90044B576 /* UIImageTransformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageTransformer.swift; sourceTree = "<group>"; };
 		3061E9BD2C5582EC0044B576 /* Car.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
+		3061E9C02C5771360044B576 /* AddWorkersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWorkersView.swift; sourceTree = "<group>"; };
+		3061E9C22C57C8310044B576 /* NewWorkerCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewWorkerCellView.swift; sourceTree = "<group>"; };
+		3061E9C42C57D3330044B576 /* PhotoPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoPicker.swift; sourceTree = "<group>"; };
 		309387482C50F3FD00CB0885 /* FastTrack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FastTrack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3093874B2C50F3FD00CB0885 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3093874D2C50F3FD00CB0885 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -95,6 +101,7 @@
 		3061E9812C5178FD0044B576 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				3061E9C42C57D3330044B576 /* PhotoPicker.swift */,
 				3061E9B72C55399E0044B576 /* PickerCarView.swift */,
 				3061E9822C5179190044B576 /* CustomTextFieldView.swift */,
 				3061E9872C517AE80044B576 /* CustomButtonView.swift */,
@@ -142,10 +149,19 @@
 			children = (
 				3061E9AD2C5420C60044B576 /* PlaceCellView.swift */,
 				3061E9B12C552EBA0044B576 /* CarCellView.swift */,
-				3061E9B32C55303D0044B576 /* WorkersView.swift */,
 				3061E9B92C553CD60044B576 /* NewCarsCellView.swift */,
+				3061E9C22C57C8310044B576 /* NewWorkerCellView.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		3061E9BF2C5770FE0044B576 /* Workers */ = {
+			isa = PBXGroup;
+			children = (
+				3061E9B32C55303D0044B576 /* WorkersCellView.swift */,
+				3061E9C02C5771360044B576 /* AddWorkersView.swift */,
+			);
+			path = Workers;
 			sourceTree = "<group>";
 		};
 		3093873F2C50F3FD00CB0885 = {
@@ -186,6 +202,7 @@
 		3093875F2C50F42400CB0885 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				3061E9BF2C5770FE0044B576 /* Workers */,
 				3061E99D2C53E9100044B576 /* PlaceVew */,
 				3061E97E2C5178990044B576 /* Loading */,
 			);
@@ -268,7 +285,7 @@
 				309387502C50F3FD00CB0885 /* ViewController.swift in Sources */,
 				3061E9A52C540CDF0044B576 /* OrangeButtonView.swift in Sources */,
 				3061E9BE2C5582EC0044B576 /* Car.swift in Sources */,
-				3061E9B42C55303D0044B576 /* WorkersView.swift in Sources */,
+				3061E9B42C55303D0044B576 /* WorkersCellView.swift in Sources */,
 				3093874C2C50F3FD00CB0885 /* AppDelegate.swift in Sources */,
 				3061E9B22C552EBA0044B576 /* CarCellView.swift in Sources */,
 				3093874E2C50F3FD00CB0885 /* SceneDelegate.swift in Sources */,
@@ -284,8 +301,11 @@
 				3061E9AE2C5420C60044B576 /* PlaceCellView.swift in Sources */,
 				3061E98C2C517BC90044B576 /* FastTrack.xcdatamodeld in Sources */,
 				3061E9BC2C5582C90044B576 /* UIImageTransformer.swift in Sources */,
+				3061E9C32C57C8310044B576 /* NewWorkerCellView.swift in Sources */,
+				3061E9C12C5771360044B576 /* AddWorkersView.swift in Sources */,
 				3061E9802C5178B90044B576 /* Registrationview.swift in Sources */,
 				3061E98E2C517BE20044B576 /* CoreDataManager.swift in Sources */,
+				3061E9C52C57D3330044B576 /* PhotoPicker.swift in Sources */,
 				3061E9AB2C54157E0044B576 /* TextFieldCustomView.swift in Sources */,
 				3061E9BA2C553CD60044B576 /* NewCarsCellView.swift in Sources */,
 				3061E9832C5179190044B576 /* CustomTextFieldView.swift in Sources */,
