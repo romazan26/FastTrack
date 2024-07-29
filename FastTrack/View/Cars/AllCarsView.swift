@@ -16,6 +16,7 @@ struct AllCarsView: View {
         ZStack(alignment: Alignment(horizontal: .trailing, vertical: .bottom)) {
             Color.mainColorApp.ignoresSafeArea()
             
+            //MARK: - Main stack
             VStack {
                 //MARK: - Toll bar
                 HStack {
@@ -61,12 +62,19 @@ struct AllCarsView: View {
                 Spacer()
             }.padding()
             
-            Image(systemName: "plus.circle.fill")
-                .resizable()
-                .foregroundStyle(.orangeApp)
-                .frame(width: 68, height: 68)
-                .padding()
+            //MARK: - Add car button
+            Button(action: {vm.isPresentAddCars.toggle()}, label: {
+                Image(systemName: "plus.circle.fill")
+                    .resizable()
+                    .foregroundStyle(.orangeApp)
+                    .frame(width: 68, height: 68)
+                    
+            }).padding()
+           
         }
+        .fullScreenCover(isPresented: $vm.isPresentAddCars, content: {
+            AddCarsView(place: place, vm: vm)
+        })
     }
 }
 

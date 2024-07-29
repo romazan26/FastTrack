@@ -16,6 +16,7 @@ final class PlaceViewModel: ObservableObject{
     @Published var isPresentNewPlace = false
     @Published var isPresentEditeWorkers = false
     @Published var isPresentAllCars = false
+    @Published var isPresentAddCars = false
     
     @Published var places: [Place] = []
     @Published var cars: [Car] = []
@@ -68,8 +69,41 @@ final class PlaceViewModel: ObservableObject{
         save()
     }
     func deletePlace(place: Place){
-        manager.container.viewContext.delete(place)
+        if let cars = place.car?.allObjects as? [Car]{
+            for car in cars {
+                manager.container.viewContext.delete(car)
+            }
+        }
+        if let workers = place.worker?.allObjects as? [Worker]{
+            for worker in workers {
+                manager.container.viewContext.delete(worker)
+            }
+        }
+            manager.container.viewContext.delete(place)
+            save()
+        
+    }
+    
+    //MARK: - Update place Cars
+    func updateCars(id: ObjectIdentifier){
+        let request = NSFetchRequest<Place>(entityName: "Place")
+        do{
+            places = try manager.context.fetch(request)
+            let place = places.first(where: {$0.id == id})
+            var index = 0
+            for simpleCar in simpleCars {
+                if !simpleCar.isEmpty {
+                    addCar(carTitle: simpleCar, carImage: simpleCarImageArray[index], place: place!)
+                }
+                index += 1
+            }
+        }catch let error {
+            print("Dont updata: \(error.localizedDescription)")
+        }
+        
         save()
+        clear()
+        
     }
     
     //MARK: - Update Place solary
