@@ -8,14 +8,19 @@
 import SwiftUI
 
 struct toolbarView: View {
+    
     @StateObject var vm: PlaceViewModel
+    
+    var totalWorker = 0
+    var salary = 0
+    
     var body: some View {
         ZStack {
             Color.secondColorApp
             HStack(spacing: 18) {
                 //MARK: - Total salary
                 VStack {
-                    Text("0$")
+                    Text("\(salary)$")
                         .foregroundStyle(.white)
                     .font(.system(size: 26,weight: .heavy))
                     Text("Total salary")
@@ -29,7 +34,7 @@ struct toolbarView: View {
                 
                 //MARK: - Total workers
                 VStack {
-                    Text("0")
+                    Text("\(totalWorker)")
                         .foregroundStyle(.white)
                     .font(.system(size: 26,weight: .heavy))
                     Text("Total workers")

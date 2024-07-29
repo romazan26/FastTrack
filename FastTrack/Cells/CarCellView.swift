@@ -9,10 +9,11 @@ import SwiftUI
 
 struct CarCellView: View {
     let car: Car
+    @StateObject var vm: PlaceViewModel
     var body: some View {
         ZStack {
             Color.secondColorApp
-            HStack {
+            HStack(spacing: 20) {
                 Image(uiImage: car.carImage ?? .car1 )
                     .resizable()
                     .frame(width: 72, height: 17)
@@ -25,10 +26,12 @@ struct CarCellView: View {
                 
                 Spacer()
                 
-                Image(systemName: "chevron.right.circle.fill")
-                    .resizable()
-                    .foregroundStyle(.orangeApp)
-                    .frame(width: 29, height: 29)
+                Button(action: {vm.deleteCar(car: car)}, label: {
+                    Image(systemName: "trash.circle")
+                        .resizable()
+                        .frame(width: 29, height: 29)
+                        .foregroundStyle(.orangeApp)
+                })
             }.padding()
         }
         .frame(height: 74)
@@ -37,5 +40,5 @@ struct CarCellView: View {
 }
 
 #Preview {
-    CarCellView(car: Car())
+    CarCellView(car: Car(), vm: PlaceViewModel())
 }

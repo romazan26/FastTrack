@@ -44,22 +44,26 @@ struct PlaceInfoView: View {
                         .padding(6)
                         .background(Color.secondColorApp.cornerRadius(91))
                 }
-                
-                toolbarView(vm: vm)
-                    .padding(.top, 65)
-                    .shadow(color: /*@START_MENU_TOKEN@*/.black/*@END_MENU_TOKEN@*/, radius: 20)
+                if let workers = place.worker?.allObjects as? [Worker]{
+                    toolbarView(vm: vm, totalWorker: workers.count, salary: Int(place.salary))
+                        .padding(.top, 65)
+                        .shadow(color: .black, radius: 20)
+                }
                 
                 //MARK: - Count cars
                 HStack{
+                    
                     Text("Cars")
                         .foregroundStyle(.white)
                         .font(.system(size: 21, weight: .heavy))
-                    Text("13")
-                        .foregroundStyle(.gray)
-                        .font(.system(size: 21, weight: .heavy))
+                    if let cars = place.car?.allObjects as? [Car]{
+                        Text("\(cars.count)")
+                            .foregroundStyle(.gray)
+                            .font(.system(size: 21, weight: .heavy))
+                    }
                     Spacer()
                     
-                    Button(action: {}, label: {
+                    Button(action: {vm.isPresentAllCars.toggle()}, label: {
                         Text("See all")
                             .foregroundStyle(.gray)
                             .font(.system(size: 15))
@@ -71,16 +75,15 @@ struct PlaceInfoView: View {
                 if let cars = place.car?.allObjects as? [Car] {
                     ScrollView {
                         ForEach(cars) { car in
-                            CarCellView(car: car)
+                            CarCellView(car: car, vm: vm)
                         }
                     }
                 }
                 
-                
                 Spacer()
                 
                 //MARK: - Workers view
-                Button(action: {vm.isPresentEditePlace.toggle()}, label: {
+                Button(action: {vm.isPresentEditeWorkers.toggle()}, label: {
                     WorkersCellView(place: place)
                         .padding(.vertical)
                 })
@@ -88,15 +91,22 @@ struct PlaceInfoView: View {
                 
                 //MARK: - Edit information button
                 Button(action: {
+                    vm.updatePlaceSolary(id: place.id)
                     vm.addAllWorkers(place: place)
-                    
+                    dismiss()
                 }, label: {
                     OrangeButtonView(text: "Edit information")
                 })
             }.padding()
         }
-        .sheet(isPresented: $vm.isPresentEditePlace, content: {
+        .onAppear(perform: {
+            vm.getPlace()
+        })
+        .sheet(isPresented: $vm.isPresentEditeWorkers, content: {
             AddWorkersView(place: place, vm: vm)
+        })
+        .sheet(isPresented: $vm.isPresentAllCars, content: {
+            AllCarsView(place: place, vm: vm)
         })
         .navigationBarBackButtonHidden()
     }

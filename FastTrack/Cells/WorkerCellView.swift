@@ -9,10 +9,11 @@ import SwiftUI
 
 struct WorkerCellView: View {
     let worker: Worker
+    @StateObject var vm: PlaceViewModel
     var body: some View {
         ZStack {
             Color.secondColorApp
-            HStack {
+            HStack(spacing: 20) {
                 //MARK: - Photo worker
                 if worker.photoWorker == nil{
                    
@@ -26,7 +27,11 @@ struct WorkerCellView: View {
                         .frame(width: 53, height: 53)
                         .cornerRadius(50)
                 }
-                Spacer()
+                
+                //MARK: - Divider
+                Rectangle()
+                    .foregroundStyle(.gray)
+                    .frame(width: 1, height: 32)
                 
                 //MARK: - Name worker
                 Text(worker.nameWorker ?? "")
@@ -34,6 +39,13 @@ struct WorkerCellView: View {
                     .font(.system(size: 18, weight: .heavy))
                 
                 Spacer()
+                
+                Button(action: {vm.deleteWorker(worker: worker)}, label: {
+                    Image(systemName: "trash.circle")
+                        .resizable()
+                        .frame(width: 29, height: 29)
+                        .foregroundStyle(.orangeApp)
+                })
             }
         }
         .frame(height: 74)
@@ -42,5 +54,5 @@ struct WorkerCellView: View {
 }
 
 #Preview {
-    WorkerCellView(worker: Worker())
+    WorkerCellView(worker: Worker(), vm: PlaceViewModel())
 }

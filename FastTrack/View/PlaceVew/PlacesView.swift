@@ -9,6 +9,7 @@ import SwiftUI
 
 struct PlacesView: View {
     @StateObject var vm = PlaceViewModel()
+    @StateObject var vmUser: RegistrationViewModel
     var body: some View {
         NavigationView {
             ZStack {
@@ -20,7 +21,7 @@ struct PlacesView: View {
                             .foregroundStyle(.white)
                             .font(.system(size: 24, weight: .heavy))
                         Spacer()
-                        Text("admin")
+                        Text(vmUser.users.first?.name ?? "")
                             .foregroundStyle(.white)
                             .font(.system(size: 20, weight: .heavy))
                             .padding(.horizontal)
@@ -30,7 +31,8 @@ struct PlacesView: View {
                     }
                     .padding(.vertical)
                     //MARK: - ToolBar
-                    toolbarView(vm: vm)
+                    
+                    toolbarView(vm: vm, totalWorker: vm.workers.count, salary: vm.allSalary)
                     
                     Spacer()
                     
@@ -43,10 +45,8 @@ struct PlacesView: View {
                                 NavigationLink {
                                     PlaceInfoView(vm: vm, place: place)
                                 } label: {
-                                    PlaceCellView(place: place)
+                                    PlaceCellView(place: place, vm: vm)
                                 }
-
-                                
                             }
                         }
                         .padding(.vertical)
@@ -60,7 +60,10 @@ struct PlacesView: View {
                     })
                 }.padding()
             }
-            
+            .onAppear(perform: {
+                vm.getPlace()
+                vm.getAllSalary()
+            })
             .sheet(isPresented: $vm.isPresentNewPlace, content: {
                 NewPlaceView(vm: vm)
         })
@@ -69,5 +72,5 @@ struct PlacesView: View {
 }
 
 #Preview {
-    PlacesView()
+    PlacesView( vmUser: RegistrationViewModel())
 }

@@ -9,6 +9,7 @@ import SwiftUI
 
 struct PlaceCellView: View {
     let place: Place
+    @StateObject var vm: PlaceViewModel
     var body: some View {
         ZStack {
             Color.secondColorApp
@@ -21,37 +22,27 @@ struct PlaceCellView: View {
                             .foregroundStyle(.white)
                             .font(.system(size: 24, weight: .heavy))
                         
-                        
-                        
-                        
                         //MARK: - Worker
-                        HStack{
-                            Image(.worker1)
-                                .resizable()
-                                .aspectRatio(contentMode: .fill)
-                                .frame(width: 32, height: 32)
-                                .cornerRadius(50)
-                            Image(.worker1)
-                                .resizable()
-                                .aspectRatio(contentMode: .fill)
-                                .frame(width: 32, height: 32)
-                                .cornerRadius(50)
-                                .offset(x: -20)
-                            Image(.worker1)
-                                .resizable()
-                                .aspectRatio(contentMode: .fill)
-                                .frame(width: 32, height: 32)
-                                .cornerRadius(50)
-                                .offset(x: -40)
-                        }
-                        .foregroundStyle(.grayApp)
+                        if let workers = place.worker?.allObjects as? [Worker]{
+                            HStack(spacing: -20) {
+                                ForEach(workers) { worker in
+                                    Image(uiImage: worker.photoWorker ?? .worker1)
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fill)
+                                        .frame(width: 32, height: 32)
+                                        .cornerRadius(50)
+                                }
+                            }
+                                }
                         
                         Spacer()
                         
-                        Image(systemName: "chevron.right.circle.fill")
-                            .resizable()
-                            .frame(width: 29,height: 29)
-                            .foregroundStyle(.orangeApp)
+                        Button(action: {vm.deletePlace(place: place)}, label: {
+                            Image(systemName: "trash.circle")
+                                .resizable()
+                                .frame(width: 29, height: 29)
+                                .foregroundStyle(.orangeApp)
+                        })
                     }
                     //MARK: - Adress place
                     Text(place.adress ?? "")
@@ -84,7 +75,7 @@ struct PlaceCellView: View {
                     
                     //MARK: - Salary
                     VStack{
-                        Text("15670$")
+                        Text("\(place.salary)$")
                             .foregroundStyle(.white)
                             .font(.system(size: 25, weight: .heavy))
                         Text("July")
@@ -102,5 +93,5 @@ struct PlaceCellView: View {
 }
 
 #Preview {
-    PlaceCellView(place: Place())
+    PlaceCellView(place: Place(), vm: PlaceViewModel())
 }

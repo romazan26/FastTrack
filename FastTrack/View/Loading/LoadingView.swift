@@ -48,7 +48,7 @@ struct LoadingView: View {
                 }
             })
             .fullScreenCover(isPresented: $vm.isPresentGame, content: {
-                PlacesView()
+                PlacesView( vmUser: vm)
             })
     }
     }

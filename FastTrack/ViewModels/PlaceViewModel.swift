@@ -14,7 +14,8 @@ final class PlaceViewModel: ObservableObject{
     let manager = CoreDataManager.instance
     
     @Published var isPresentNewPlace = false
-    @Published var isPresentEditePlace = false
+    @Published var isPresentEditeWorkers = false
+    @Published var isPresentAllCars = false
     
     @Published var places: [Place] = []
     @Published var cars: [Car] = []
@@ -36,10 +37,54 @@ final class PlaceViewModel: ObservableObject{
     @Published var simpleCarImageArray: [ImageResource] = []
     @Published var countCars = 0
     
+    @Published var allSalary = 0
+    
     init(){
         getPlace()
         getCars()
         getWorkers()
+        getAllSalary()
+    }
+    
+    //MARK: - Get all salary
+    func getAllSalary() {
+        allSalary = 0
+        getPlace()
+        if !places.isEmpty{
+            for place in places {
+                allSalary += Int(place.salary)
+            }
+        }
+        
+    }
+    
+    //MARK: - Delte
+    func deleteWorker(worker: Worker){
+        manager.container.viewContext.delete(worker)
+            save()
+    }
+    func deleteCar(car: Car){
+        manager.container.viewContext.delete(car)
+        save()
+    }
+    func deletePlace(place: Place){
+        manager.container.viewContext.delete(place)
+        save()
+    }
+    
+    //MARK: - Update Place solary
+    func updatePlaceSolary(id: ObjectIdentifier){
+        let request = NSFetchRequest<Place>(entityName: "Place")
+        do{
+            places = try manager.context.fetch(request)
+            let place = places.first(where: {$0.id == id})
+            place?.salary = Int16(simplePlaceSolary) ?? 0
+        }catch let error {
+            print("Dont updata: \(error.localizedDescription)")
+        }
+        
+        save()
+        
     }
     
     //MARK: - addNewWorkerCell
@@ -138,11 +183,14 @@ final class PlaceViewModel: ObservableObject{
     func clear(){
         simplePlaceTitle = ""
         simpleAdress = ""
+        simplePlaceSolary = ""
+        
         simpleCarTitle = ""
         simpleCarImage = ImageResource.car1
         simpleCars.removeAll()
         simpleCarImageArray.removeAll()
         countCars = 0
+        
         simpleWorkerName = ""
         simpleWorkerImage = .test
         simpleWorkers.removeAll()
@@ -157,5 +205,7 @@ final class PlaceViewModel: ObservableObject{
         places.removeAll()
         manager.save()
         getPlace()
+        getCars()
+        getWorkers()
     }
 }

@@ -19,7 +19,7 @@ struct AddWorkersView: View {
                     
                     //MARK: - Back button
                     Button(action: {
-                        
+                        vm.isPresentEditeWorkers.toggle()
                     }, label: {
                         Image(systemName: "chevron.left.circle.fill")
                             .resizable()
@@ -41,9 +41,11 @@ struct AddWorkersView: View {
                         Circle()
                             .frame(width: 38)
                             .foregroundStyle(.secondColorApp)
-                        Text("0")
-                            .foregroundStyle(.white)
-                            .font(.system(size: 19, weight: .heavy))
+                        if let workers = place.worker?.allObjects as? [Worker]{
+                            Text("\(workers.count)")
+                                .foregroundStyle(.white)
+                                .font(.system(size: 19, weight: .heavy))
+                        }
                     }
                 }
                 
@@ -52,7 +54,7 @@ struct AddWorkersView: View {
                     Color.secondColorApp
                     VStack{
                         //MARK: - solary Place
-                        CustomTextFieldView(placeholder: "0$",
+                        CustomTextFieldView(placeholder: String(place.salary),
                                             alignment: .center,
                                             textAlignment: .center,
                                             text: $vm.simplePlaceSolary)
@@ -75,7 +77,7 @@ struct AddWorkersView: View {
                 ScrollView {
                     if let workers = place.worker?.allObjects as? [Worker]{
                         ForEach(workers) { worker in
-                            WorkerCellView(worker: worker)
+                            WorkerCellView(worker: worker, vm: vm)
                         }
                     }
                     //MARK: - Cars List TF
