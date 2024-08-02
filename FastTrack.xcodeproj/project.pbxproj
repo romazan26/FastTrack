@@ -36,6 +36,11 @@
 		3061E9C92C57EA380044B576 /* WorkerCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3061E9C82C57EA380044B576 /* WorkerCellView.swift */; };
 		3061E9CC2C580CF60044B576 /* AllCarsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3061E9CB2C580CF60044B576 /* AllCarsView.swift */; };
 		3061E9CE2C5826B80044B576 /* AddCarsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3061E9CD2C5826B80044B576 /* AddCarsView.swift */; };
+		3061E9D02C58C7740044B576 /* UserInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3061E9CF2C58C7740044B576 /* UserInfoView.swift */; };
+		3061E9D32C58CBAD0044B576 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3061E9D22C58CBAD0044B576 /* SettingsView.swift */; };
+		3061E9D52C58CBEA0044B576 /* SettingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3061E9D42C58CBEA0044B576 /* SettingButton.swift */; };
+		3061E9DA2C58CC520044B576 /* webView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3061E9D62C58CC520044B576 /* webView.swift */; };
+		3061E9DC2C58CC520044B576 /* WebViewPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3061E9D82C58CC520044B576 /* WebViewPage.swift */; };
 		3093874C2C50F3FD00CB0885 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3093874B2C50F3FD00CB0885 /* AppDelegate.swift */; };
 		3093874E2C50F3FD00CB0885 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3093874D2C50F3FD00CB0885 /* SceneDelegate.swift */; };
 		309387502C50F3FD00CB0885 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3093874F2C50F3FD00CB0885 /* ViewController.swift */; };
@@ -75,6 +80,11 @@
 		3061E9C82C57EA380044B576 /* WorkerCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkerCellView.swift; sourceTree = "<group>"; };
 		3061E9CB2C580CF60044B576 /* AllCarsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllCarsView.swift; sourceTree = "<group>"; };
 		3061E9CD2C5826B80044B576 /* AddCarsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCarsView.swift; sourceTree = "<group>"; };
+		3061E9CF2C58C7740044B576 /* UserInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoView.swift; sourceTree = "<group>"; };
+		3061E9D22C58CBAD0044B576 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		3061E9D42C58CBEA0044B576 /* SettingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingButton.swift; sourceTree = "<group>"; };
+		3061E9D62C58CC520044B576 /* webView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = webView.swift; sourceTree = "<group>"; };
+		3061E9D82C58CC520044B576 /* WebViewPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewPage.swift; sourceTree = "<group>"; };
 		309387482C50F3FD00CB0885 /* FastTrack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FastTrack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3093874B2C50F3FD00CB0885 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3093874D2C50F3FD00CB0885 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -101,7 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				309387602C50F43A00CB0885 /* LoadingView.swift */,
-				3061E97F2C5178B90044B576 /* Registrationview.swift */,
+				3061E9D22C58CBAD0044B576 /* SettingsView.swift */,
 			);
 			path = Loading;
 			sourceTree = "<group>";
@@ -117,6 +127,7 @@
 				3061E9A22C53F4DB0044B576 /* toolbarView.swift */,
 				3061E9A42C540CDF0044B576 /* OrangeButtonView.swift */,
 				3061E9AA2C54157E0044B576 /* TextFieldCustomView.swift */,
+				3061E9D42C58CBEA0044B576 /* SettingButton.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -183,6 +194,24 @@
 			path = Cars;
 			sourceTree = "<group>";
 		};
+		3061E9D12C58C9AE0044B576 /* UserView */ = {
+			isa = PBXGroup;
+			children = (
+				3061E9CF2C58C7740044B576 /* UserInfoView.swift */,
+				3061E97F2C5178B90044B576 /* Registrationview.swift */,
+			);
+			path = UserView;
+			sourceTree = "<group>";
+		};
+		3061E9D92C58CC520044B576 /* WebView */ = {
+			isa = PBXGroup;
+			children = (
+				3061E9D62C58CC520044B576 /* webView.swift */,
+				3061E9D82C58CC520044B576 /* WebViewPage.swift */,
+			);
+			path = WebView;
+			sourceTree = "<group>";
+		};
 		3093873F2C50F3FD00CB0885 = {
 			isa = PBXGroup;
 			children = (
@@ -202,6 +231,7 @@
 		3093874A2C50F3FD00CB0885 /* FastTrack */ = {
 			isa = PBXGroup;
 			children = (
+				3061E9D92C58CC520044B576 /* WebView */,
 				3061E9AC2C541F8E0044B576 /* Cells */,
 				3061E9892C517B9F0044B576 /* CoreData */,
 				3061E9842C5179E70044B576 /* ViewModels */,
@@ -221,6 +251,7 @@
 		3093875F2C50F42400CB0885 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				3061E9D12C58C9AE0044B576 /* UserView */,
 				3061E9CA2C580CE20044B576 /* Cars */,
 				3061E9BF2C5770FE0044B576 /* Workers */,
 				3061E99D2C53E9100044B576 /* PlaceVew */,
@@ -300,6 +331,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3061E9DC2C58CC520044B576 /* WebViewPage.swift in Sources */,
+				3061E9D32C58CBAD0044B576 /* SettingsView.swift in Sources */,
 				3061E99B2C53CBF50044B576 /* ProgressCircleView.swift in Sources */,
 				3061E9A72C540E8E0044B576 /* PlaceViewModel.swift in Sources */,
 				309387502C50F3FD00CB0885 /* ViewController.swift in Sources */,
@@ -315,11 +348,14 @@
 				3061E9B62C5538A90044B576 /* Enums.swift in Sources */,
 				3061E9862C517A020044B576 /* RegistrationViewModel.swift in Sources */,
 				3061E9B02C5529840044B576 /* PlaceInfoView.swift in Sources */,
+				3061E9D02C58C7740044B576 /* UserInfoView.swift in Sources */,
 				3061E9A32C53F4DB0044B576 /* toolbarView.swift in Sources */,
 				3061E9C92C57EA380044B576 /* WorkerCellView.swift in Sources */,
 				3061E9A12C53E97D0044B576 /* PlacesView.swift in Sources */,
+				3061E9D52C58CBEA0044B576 /* SettingButton.swift in Sources */,
 				309387612C50F43A00CB0885 /* LoadingView.swift in Sources */,
 				3061E9B82C55399E0044B576 /* PickerCarView.swift in Sources */,
+				3061E9DA2C58CC520044B576 /* webView.swift in Sources */,
 				3061E9CE2C5826B80044B576 /* AddCarsView.swift in Sources */,
 				3061E9AE2C5420C60044B576 /* PlaceCellView.swift in Sources */,
 				3061E98C2C517BC90044B576 /* FastTrack.xcdatamodeld in Sources */,

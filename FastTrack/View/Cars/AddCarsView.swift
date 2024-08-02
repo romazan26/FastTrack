@@ -10,6 +10,7 @@ import SwiftUI
 struct AddCarsView: View {
     let place: Place
     @StateObject var vm: PlaceViewModel
+    @FocusState var keyboardIsFocus: Bool
     var body: some View {
         ZStack {
             Color.mainColorApp.ignoresSafeArea()
@@ -24,6 +25,7 @@ struct AddCarsView: View {
                         //MARK: - Cars List TF
                         ForEach(0..<vm.countCars, id: \.self){i in
                             NewCarsCellView(simpleImage: $vm.simpleCarImageArray[i], simpleNameCar: $vm.simpleCars[i])
+                                .focused($keyboardIsFocus)
                             
                         }
                         
@@ -57,6 +59,9 @@ struct AddCarsView: View {
                 
                 
             }.padding()
+        }
+        .onTapGesture {
+            keyboardIsFocus = false
         }
     }
 }

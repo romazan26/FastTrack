@@ -21,13 +21,28 @@ struct PlacesView: View {
                             .foregroundStyle(.white)
                             .font(.system(size: 24, weight: .heavy))
                         Spacer()
-                        Text(vmUser.users.first?.name ?? "")
-                            .foregroundStyle(.white)
-                            .font(.system(size: 20, weight: .heavy))
-                            .padding(.horizontal)
-                            .padding(.vertical, 6)
-                            .background(Color.orangeApp)
-                            .cornerRadius(88)
+                        
+                        //MARK: - Button log out
+                        Button(action: {
+                            vm.deleteAll()
+                            vmUser.deleteUsers()
+                            vmUser.isPresentGame = false
+                        }, label: {
+                            Text("Log out")
+                                .foregroundStyle(.gray)
+                        })
+                        
+                        //MARK: - Button user info
+                        Button(action: {vmUser.isPresentInfoUser.toggle()}, label: {
+                            Text(vmUser.users.first?.name ?? "")
+                                .foregroundStyle(.white)
+                                .font(.system(size: 20, weight: .heavy))
+                                .padding(.horizontal)
+                                .padding(.vertical, 6)
+                                .background(Color.orangeApp)
+                                .cornerRadius(88)
+                        })
+                        
                     }
                     .padding(.vertical)
                     //MARK: - ToolBar
@@ -64,9 +79,14 @@ struct PlacesView: View {
                 vm.getPlace()
                 vm.getAllSalary()
             })
+            
+            //MARK: - Sheets
             .sheet(isPresented: $vm.isPresentNewPlace, content: {
                 NewPlaceView(vm: vm)
-        })
+            })
+            .sheet(isPresented: $vmUser.isPresentInfoUser, content: {
+                UserInfoView(vm: vmUser, vmPlace: vm)
+            })
         }
     }
 }

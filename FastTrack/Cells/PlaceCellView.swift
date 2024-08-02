@@ -15,7 +15,7 @@ struct PlaceCellView: View {
             Color.secondColorApp
             VStack {
                 VStack(alignment: .leading) {
-                    HStack {
+                    HStack(spacing: 15) {
                         //MARK: - Title place
                         
                         Text(place.placetitle ?? "")

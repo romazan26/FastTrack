@@ -47,7 +47,9 @@ struct WorkerCellView: View {
                         .foregroundStyle(.orangeApp)
                 })
             }
+            .padding()
         }
+        
         .frame(height: 74)
         .cornerRadius(25)
     }

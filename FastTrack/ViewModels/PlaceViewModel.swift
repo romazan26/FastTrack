@@ -46,7 +46,7 @@ final class PlaceViewModel: ObservableObject{
         getWorkers()
         getAllSalary()
     }
-    
+     
     //MARK: - Get all salary
     func getAllSalary() {
         allSalary = 0
@@ -60,6 +60,24 @@ final class PlaceViewModel: ObservableObject{
     }
     
     //MARK: - Delte
+    func deleteAll(){
+        for place in places {
+            if let cars = place.car?.allObjects as? [Car]{
+                for car in cars {
+                    manager.container.viewContext.delete(car)
+                }
+            }
+            if let workers = place.worker?.allObjects as? [Worker]{
+                for worker in workers {
+                    manager.container.viewContext.delete(worker)
+                }
+            }
+            manager.container.viewContext.delete(place)
+        }
+        save()
+        clear()
+    }
+    
     func deleteWorker(worker: Worker){
         manager.container.viewContext.delete(worker)
             save()
@@ -81,7 +99,6 @@ final class PlaceViewModel: ObservableObject{
         }
             manager.container.viewContext.delete(place)
             save()
-        
     }
     
     //MARK: - Update place Cars

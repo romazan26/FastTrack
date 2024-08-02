@@ -49,6 +49,7 @@ struct NewPlaceView: View {
                     //MARK: - Cars List TF
                     ForEach(0..<vm.countCars, id: \.self){i in
                         NewCarsCellView(simpleImage: $vm.simpleCarImageArray[i], simpleNameCar: $vm.simpleCars[i])
+                            .focused($keyboardIsFocus)
                         
                     }
                     

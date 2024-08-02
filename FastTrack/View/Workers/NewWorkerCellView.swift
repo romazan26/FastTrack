@@ -15,6 +15,7 @@ struct NewWorkerCellView: View {
     
     @State private var isPresented: Bool = false
     
+    
     var config: PHPickerConfiguration {
         var config = PHPickerConfiguration(photoLibrary: .shared())
         config.filter = .images

@@ -20,9 +20,20 @@ final class RegistrationViewModel: ObservableObject{
     @Published var percents: Float = 0
     
     @Published var isPresentGame = false
+    @Published var isPresentInfoUser = false
+    @Published var isPresentSetting = false
     
     init(){
         getUser()
+    }
+    
+    //MARK: - delete all user
+    func deleteUsers(){
+        for user in users {
+            manager.container.viewContext.delete(user)
+        }
+        save()
+        clear()
     }
     
     //MARK: - Add usesr
@@ -30,6 +41,7 @@ final class RegistrationViewModel: ObservableObject{
         let newUser = User(context: manager.context)
         newUser.name = simpleName
         newUser.serName = simpleSurname
+        newUser.dataEntry = Date()
         
         save()
         clear()

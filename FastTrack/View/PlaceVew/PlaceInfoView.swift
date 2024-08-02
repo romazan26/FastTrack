@@ -74,7 +74,7 @@ struct PlaceInfoView: View {
                 //MARK: - List of car
                 if let cars = place.car?.allObjects as? [Car] {
                     ScrollView {
-                        ForEach(cars) { car in
+                        ForEach(cars.prefix(3)) { car in
                             CarCellView(car: car, vm: vm)
                         }
                     }

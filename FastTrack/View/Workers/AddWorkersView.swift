@@ -10,6 +10,7 @@ import SwiftUI
 struct AddWorkersView: View {
     let place: Place
     @StateObject var vm: PlaceViewModel
+    @FocusState var keyboardIsFocus: Bool
     var body: some View {
         ZStack {
             Color.mainColorApp.ignoresSafeArea()
@@ -62,6 +63,7 @@ struct AddWorkersView: View {
                             .font(.system(size: 31, weight: .heavy))
                             .keyboardType(.numberPad)
                             .padding(.top, -20)
+                            .focused($keyboardIsFocus)
                         
                         Text("Total per workers")
                             .foregroundStyle(.gray)
@@ -83,6 +85,7 @@ struct AddWorkersView: View {
                     //MARK: - Cars List TF
                     ForEach(0..<vm.countWorkers, id: \.self){i in
                         NewWorkerCellView(nameWorker: $vm.simpleWorkers[i], photoWorker: $vm.simpleWorkersImages[i])
+                            .focused($keyboardIsFocus)
                         
                     }
                     
@@ -103,6 +106,9 @@ struct AddWorkersView: View {
                     }
                 }
             }.padding()
+        }
+        .onTapGesture {
+            keyboardIsFocus = false
         }
     }
 }
