@@ -68,8 +68,8 @@ struct SettingsView: View {
                     vm.deleteUsers()
                     vm.isPresentGame = false
                 }, label: {
-                    OrangeButtonView(text: "Log out")
-                })
+                    OrangeButtonView(text: "Delete account")
+                }).padding()
             }
         }
         .navigationBarBackButtonHidden(true)
@@ -77,7 +77,7 @@ struct SettingsView: View {
             ShareSheet(items: urlShare )
         })
         .sheet(isPresented: $isPresentPolicy, content: {
-            WebViewPage(urlString: URL(string: "https://google.com")!)
+            WebViewPage(urlString: URL(string: "https://telegra.ph/Privacy-Policy-08-06-46")!)
         })
     }
 }

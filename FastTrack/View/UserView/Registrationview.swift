@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct Registrationview: View {
-    @StateObject var vm: RegistrationViewModel
+    @StateObject var vm = RegistrationViewModel()
     @FocusState private var keyboardIsFocus: Bool
     var body: some View {
         ZStack {
@@ -31,12 +31,28 @@ struct Registrationview: View {
                     .focused($keyboardIsFocus)
                 
                 Spacer()
-                
-                Button(action: {vm.addUser()}, label: {
+                //MARK: - Begin button
+                Button(action: {
+                    vm.addUser()
+                    vm.isPresentGame.toggle()}, label: {
                     CustomButtonView(text: "Begin")
+                        .opacity(vm.simpleName.isEmpty ? 0.5 : 1)
                 })
+                .disabled(vm.simpleName.isEmpty ? true : false)
+                
+                //MARK: - Skip button
+                Button(action: { vm.isPresentGame.toggle()}, label: {
+                    Text("Skip")
+                        .foregroundStyle(.orangeApp)
+                        .font(.title2)
+                        .opacity(0.8)
+                })
+                
             }.padding()
         }
+        .fullScreenCover(isPresented: $vm.isPresentGame, content: {
+            PlacesView( vmUser: vm)
+        })
         .onTapGesture {
             keyboardIsFocus = false
         }

@@ -17,8 +17,6 @@ final class RegistrationViewModel: ObservableObject{
     @Published var simpleName = ""
     @Published var simpleSurname = ""
     
-    @Published var percents: Float = 0
-    
     @Published var isPresentGame = false
     @Published var isPresentInfoUser = false
     @Published var isPresentSetting = false

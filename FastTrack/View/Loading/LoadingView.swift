@@ -8,11 +8,9 @@
 import SwiftUI
 
 struct LoadingView: View {
-    @StateObject var vm = RegistrationViewModel()
+    @State private var percents: Float = 0
+    @State private var isPresentGame = false
     var body: some View {
-        if vm.users.isEmpty {
-            Registrationview(vm: vm)
-        }else{
             ZStack {
                 Color.mainColorApp.ignoresSafeArea()
                 VStack {
@@ -20,10 +18,10 @@ struct LoadingView: View {
                     Text("FastTrack")
                         .foregroundStyle(.white)
                         .font(.system(size: 54, weight: .heavy))
-                        .padding(.top, 180)
+                        .padding(.top, 165)
                     
                     //MARK: - user name
-                    Text(vm.users.first?.name ?? "")
+                    Text("admin")
                         .foregroundStyle(.white)
                         .font(.system(size: 19, weight: .heavy))
                         .padding(5)
@@ -35,23 +33,23 @@ struct LoadingView: View {
                     
                     //MARK: - Loading circle
                     
-                    ProgressCircleView(progress: vm.percents)
+                    ProgressCircleView(progress: percents)
                         .frame(width: 100, height: 100)
                 }.padding()
             }.onAppear(perform: {
                 Timer.scheduledTimer(withTimeInterval: 0.02, repeats: true) { timer in
-                    if vm.percents < 0.99{
-                        vm.percents += 0.01
+                    if percents < 0.99{
+                        percents += 0.01
                     }else {
                         timer.invalidate()
-                        vm.isPresentGame = true}
+                        isPresentGame = true}
                 }
             })
-            .fullScreenCover(isPresented: $vm.isPresentGame, content: {
-                PlacesView( vmUser: vm)
+            .fullScreenCover(isPresented: $isPresentGame, content: {
+                Registrationview()
             })
     }
-    }
+    
 }
 
 #Preview {
